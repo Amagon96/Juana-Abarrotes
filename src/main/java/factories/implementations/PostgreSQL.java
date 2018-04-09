@@ -19,7 +19,7 @@ public class PostgreSQL implements ProductDAO {
         try {
             ConnectionDao connectionDao = ConnectionDao.getInstance();
             Statement st = connectionDao.getConnection().createStatement();
-            st.executeQuery(String.format("%s ('%s','%.2f','%s','%d','%d','%d')",Product.INSERT,product.getDescripcion(),product.getPrecio(),product.getClasificacion(),product.getExistencia(),product.getExistencia_max(),product.getExistencia_min()));
+            st.executeQuery(String.format("%s ('%s','%.2f','%s','%d','%d','%d')",Product.INSERT,product.getDescripcion(),product.getPrecio(),product.getClasificacion(),product.getExistencia(),product.getExistencia_min(),product.getExistencia_max()));
         } catch (ClassNotFoundException | SQLException ex){
 
         }
