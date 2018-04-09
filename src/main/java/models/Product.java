@@ -2,7 +2,9 @@ package models;
 
 public class Product {
     public static final String FIELDS = "clave, descripcion, precio, clasificacion, existencia, existencia_min, existencia_max";
-    public static final String TABLE = "producto";
+    public static final String TABLE = "productos";
+    public static final String FIELDS_FOR_INSERT = "descripcion,precio,clasificacion,existencia,existencia_min,existencia_max";
+    public static final String INSERT = String.format("INSERT INTO %s (%s) VALUES", TABLE,FIELDS_FOR_INSERT);
     public static final String Q_ALL = String.format("SELECT * FROM %s", TABLE);
     public static final String Q_MORE_THAN = String.format("%s WHERE existencia > ", Q_ALL);
     public static final String Q_EX_LESS_THAN = String.format("%s WHERE existencia < ", Q_ALL);

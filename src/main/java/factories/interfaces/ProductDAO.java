@@ -5,6 +5,8 @@ import java.util.List;
 
 public interface ProductDAO {
 
+    public void create(Product product );
+
     public List<Product> moreThan(Integer criteria);
 
     public List<Product> lessThan(Integer criteria);

@@ -23,7 +23,7 @@ public class ConnectionDao {
     private void createConection() throws SQLException, ClassNotFoundException {
         String urlDatabase = "jdbc:postgresql://localhost:5432/Abarrotes";
         Class.forName("org.postgresql.Driver");
-        connection = DriverManager.getConnection(urlDatabase, "postgres", "JuanaAbarrotes");
+        connection = DriverManager.getConnection(urlDatabase, "postgres", "Azul");
     }
 
     public Connection getConnection() {

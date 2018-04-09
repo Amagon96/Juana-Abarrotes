@@ -15,6 +15,18 @@ public class PostgreSQL implements ProductDAO {
     private List<Product> products = new ArrayList<>();
 
     @Override
+    public void create(Product product) {
+        try {
+            ConnectionDao connectionDao = ConnectionDao.getInstance();
+            Statement st = connectionDao.getConnection().createStatement();
+            st.executeQuery(String.format("%s ('%s','%.2f','%s','%d','%d','%d')",Product.INSERT,product.getDescripcion(),product.getPrecio(),product.getClasificacion(),product.getExistencia(),product.getExistencia_max(),product.getExistencia_min()));
+        } catch (ClassNotFoundException | SQLException ex){
+
+        }
+
+    }
+
+    @Override
     public List<Product> moreThan(Integer criteria) {
         products = new ArrayList<>();
         try {
