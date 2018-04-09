@@ -12,12 +12,12 @@ public class PostgreSQLTest {
     public void create(){
         ProductDAO productDAO = new PostgreSQL();
         Product product = new Product();
-        product.setDescripcion("Atun en agua");
-        product.setPrecio((Math.random() * 35));
-        product.setClasificacion("Abarrotes y Enlatados");
-        product.setExistencia((int) (Math.random() * 60));
-        product.setExistencia_min((int) (Math.random() * 25) +5);
-        product.setExistencia_max((int) (Math.random() * 90) +25);
+        product.setDescripcion("Descripcion");
+        product.setPrecio((35d));
+        product.setClasificacion("Clasifiacion");
+        product.setExistencia(60);
+        product.setExistencia_min(5);
+        product.setExistencia_max(25);
 
         productDAO.create(product);
     }
